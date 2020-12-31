@@ -1,0 +1,7 @@
+
+图片压缩
+最好以ImageFactory类为主(比较常用)
+
+图片缩放
+MainActivity
+
