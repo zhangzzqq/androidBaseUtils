@@ -5,3 +5,7 @@
 图片缩放
 MainActivity
 
+Fileutils 工具类3 已经满足需求
+
+如果需要获取文件路径 参考FileUtils
+获取读取文件的一些资料参考FilUtils2
