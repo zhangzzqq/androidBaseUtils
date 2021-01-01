@@ -1,6 +1,7 @@
 package com.example.imagebitmaptest;
 
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,9 +23,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.imagebitmaptest.utils.dialog.ProgressDialog;
 import com.example.imagebitmaptest.utils.dialog.StyledDialog;
 import com.example.imagebitmaptest.utils.dialog.ThinkDriveProgressDialog;
+import com.example.imagebitmaptest.utils.dialog.WaitDialog;
 import com.example.imagebitmaptest.utils.dialog.base.BaseActivity;
 import com.example.imagebitmaptest.utils.dialog.interfaces.MyDialogListener;
 import com.example.imagebitmaptest.utils.image.BitMapUtils;
@@ -45,7 +46,7 @@ public class MainActivity extends BaseActivity {
     Bitmap mBitmap;
     private static final String TAG = "MainActivity";
     private Button btnSave;
-
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,59 +56,33 @@ public class MainActivity extends BaseActivity {
         initView();
 
 
-//        Dialog gloablDialog= StyledDialog.buildLoading( "加载中...").show();
-////                startActivity(new Intent(getActivity(),demo1.class));
-//        Handler handler = new Handler();
-//        handler.postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-////                        StyledDialog.dismissLoading();
-//                StyledDialog.dismiss(gloablDialog);
-//            }
-//        },3000);
+        WaitDialog waitDialog = new WaitDialog(MainActivity.this);
+        waitDialog.setText("loading...");
 
 
+        progressDialog = new ProgressDialog(MainActivity.this);
+        progressDialog.setIndeterminate(false);
+        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        progressDialog.setMessage("loading...");
+        progressDialog.setCancelable(false);
 
-//        StyledDialog.buildMdAlert("title", "msg",  new MyDialogListener() {
-//            @Override
-//            public void onFirst() {
-//                showToast("onFirst");
-//            }
-//
-//            @Override
-//            public void onSecond() {
-//                showToast("onSecond");
-//            }
-//
-//            @Override
-//            public void onThird() {
-//                showToast("onThird");
-//            }
-//
-//        })
-//                .setBtnSize(20)
-//                .setBtnText("i","b","3")
-//                .show();
+//        ProgressDialog mProgressDialog=null;
+//        if (mProgressDialog == null) {
+//            mProgressDialog = ProgressDialog.show(this, null, "message");
+//            mProgressDialog.show();
+//                    }
 
-
-
-//        findViewById(R.id.btn_save).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(MainActivity.this,TestActivity.class);
-//                startActivity(intent);
-//            }
-//        });
-
-
-        ProgressDialog progressDialog = new ProgressDialog();
-        progressDialog.init(MainActivity.this,"努力加载中");
-
+        
         findViewById(R.id.btn_save).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                progressDialog.start();//开始加载
-                //     progressDialog.cancel();//结束加载
+                waitDialog.show();
+//                progressDialog.start();//开始加载
+//                //     progressDialog.cancel();//结束加载
+
+//                waitDialog.show();
+//                progressDialog.show();
+
 
             }
         });

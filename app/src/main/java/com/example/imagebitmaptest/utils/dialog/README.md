@@ -466,7 +466,25 @@ public class MainActivity extends AppCompatActivity {
 
 </LinearLayout>
 ```
-       
+ #5 官方的
+ ```
+ ProgressDialog progressDialog = new ProgressDialog(MainActivity.this);
+        progressDialog.setIndeterminate(false);
+        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        progressDialog.setMessage("loading...");
+        progressDialog.setCancelable(false);
+
+
+ progressDialog.show();
+
+```
+#6 框架
+https://github.com/Blankj/AndroidUtilCode
+
+
+
+
+     
 
 
  
