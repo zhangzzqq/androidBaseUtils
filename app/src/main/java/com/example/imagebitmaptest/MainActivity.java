@@ -1,6 +1,8 @@
 package com.example.imagebitmaptest;
 
+import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 
@@ -18,9 +20,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.imagebitmaptest.utils.dialog.StyledDialog;
 import com.example.imagebitmaptest.utils.dialog.ThinkDriveProgressDialog;
 import com.example.imagebitmaptest.utils.dialog.base.BaseActivity;
+import com.example.imagebitmaptest.utils.dialog.interfaces.MyDialogListener;
 import com.example.imagebitmaptest.utils.image.BitMapUtils;
 import com.example.imagebitmaptest.utils.Constant;
 import com.example.imagebitmaptest.utils.image.DataUtility;
@@ -45,19 +50,53 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        StyledDialog.init(this);
         initView();
-//        showProgressDialog(null,null);
-//       new Handler().postDelayed(new Runnable() {
-//           @Override
-//           public void run() {
-//               runOnUiThread(new Runnable() {
-//                   @Override
-//                   public void run() {
-//                       hiddenProgressDialog();
-//                   }
-//               });
-//           }
-//       },5000);
+
+
+//        Dialog gloablDialog= StyledDialog.buildLoading( "加载中...").show();
+////                startActivity(new Intent(getActivity(),demo1.class));
+//        Handler handler = new Handler();
+//        handler.postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+////                        StyledDialog.dismissLoading();
+//                StyledDialog.dismiss(gloablDialog);
+//            }
+//        },3000);
+
+
+
+        StyledDialog.buildMdAlert("title", "msg",  new MyDialogListener() {
+            @Override
+            public void onFirst() {
+                showToast("onFirst");
+            }
+
+            @Override
+            public void onSecond() {
+                showToast("onSecond");
+            }
+
+            @Override
+            public void onThird() {
+                showToast("onThird");
+            }
+
+        })
+                .setBtnSize(20)
+                .setBtnText("i","b","3")
+                .show();
+
+
+
+        findViewById(R.id.btn_save).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,TestActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void initView() {
@@ -73,5 +112,9 @@ public class MainActivity extends BaseActivity {
     }
 
 
+    public void showToast(CharSequence msg) {
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+
+    }
 
 }
