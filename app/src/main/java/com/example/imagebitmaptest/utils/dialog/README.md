@@ -421,7 +421,51 @@ public class MainActivity extends AppCompatActivity {
 
 <https://dl-download.csdn.net/down11/20170713/f5a1c5efb3bf5a3ab938734806acdb81.rar?response-content-disposition=attachment%3Bfilename%3D%22Demo.rar%22&security-token=CAISgwJ1q6Ft5B2yfSjIr5eGJtfZuup52vWTYWX611cvecNOrYDatzz2IHxFf3FoCOEYv%2Fk1nWlU6%2FoTlqF%2FTIBDQUvNYZOvWRvWckXzDbDasumZsJYw6vT8a1fxZjf%2F2MjNGaCbKPrWZvaqbX3diyZ32sGUXD6%2BXlujQ%2BDr6Zl8dYY4UxX6D1tBH8wEAgp5tI1gQhm3D%2Fu2NQPwiWf9FVdhvhEG6Vly8qOi2MaRmHG85R%2FYsrZJ%2FtuvecD%2FMJI3Z8kvC4uPsbYoJvab4kl58ANX8ap6tqtA9Arcs8uVa1sruEnXaLKMo4wxfVIjP%2FFmRvIVtprnieY9tuiWkJ%2Fs25qImF%2BBkY61GoABp7tOCLMUgoXqd8bEYTvHAu90tZsCQzq30NTHvbVvTdWpqwRYdQxkw82BJK79GMqLcaeUrM9TVOIXzyo52YYXaBt01olEapwBRv9aKyfTl9nwnFRBvKMRMuMkZN%2FstVXvnmZID2jJkt9nJSsz7wDX%2BUS%2Bep8ZfIXbPBeaZ24qO7Q%3D&OSSAccessKeyId=STS.NT3mmmW5Xm7xcCK3WzuLbBEqU&Expires=1609489159&Signature=3zbxVVymFbyhwnmVdloJSbavUGk%3D>
 
+#5 dialog 
 
+## 简单使用 dialog没有阴影 
+```
+    ProgressDialog progressDialog = new ProgressDialog();
+        progressDialog.init(MainActivity.this,"努力加载中");
+
+        findViewById(R.id.btn_save).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                progressDialog.start();//开始加载
+                //     progressDialog.cancel();//结束加载
+
+            }
+        });
+        
+```
+
+布局 
+```
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:background="@drawable/ic_loading_bg"
+              android:gravity="center"
+              android:orientation="vertical"
+              android:padding="16.0dip" >
+
+    <ProgressBar
+            android:layout_width="30.0dip"
+            android:layout_height="30.0dip"
+            android:indeterminateDrawable="@drawable/progress_drawable_white" />
+
+    <TextView
+            android:id="@+id/id_tv_loadingmsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="8.0dip"
+            android:textColor="#fff"
+            android:textSize="16.0dip" />
+
+</LinearLayout>
+```
        
 
 

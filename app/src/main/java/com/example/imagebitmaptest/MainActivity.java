@@ -22,6 +22,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.imagebitmaptest.utils.dialog.ProgressDialog;
 import com.example.imagebitmaptest.utils.dialog.StyledDialog;
 import com.example.imagebitmaptest.utils.dialog.ThinkDriveProgressDialog;
 import com.example.imagebitmaptest.utils.dialog.base.BaseActivity;
@@ -67,36 +68,51 @@ public class MainActivity extends BaseActivity {
 
 
 
-        StyledDialog.buildMdAlert("title", "msg",  new MyDialogListener() {
-            @Override
-            public void onFirst() {
-                showToast("onFirst");
-            }
+//        StyledDialog.buildMdAlert("title", "msg",  new MyDialogListener() {
+//            @Override
+//            public void onFirst() {
+//                showToast("onFirst");
+//            }
+//
+//            @Override
+//            public void onSecond() {
+//                showToast("onSecond");
+//            }
+//
+//            @Override
+//            public void onThird() {
+//                showToast("onThird");
+//            }
+//
+//        })
+//                .setBtnSize(20)
+//                .setBtnText("i","b","3")
+//                .show();
 
-            @Override
-            public void onSecond() {
-                showToast("onSecond");
-            }
-
-            @Override
-            public void onThird() {
-                showToast("onThird");
-            }
-
-        })
-                .setBtnSize(20)
-                .setBtnText("i","b","3")
-                .show();
 
 
+//        findViewById(R.id.btn_save).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(MainActivity.this,TestActivity.class);
+//                startActivity(intent);
+//            }
+//        });
+
+
+        ProgressDialog progressDialog = new ProgressDialog();
+        progressDialog.init(MainActivity.this,"努力加载中");
 
         findViewById(R.id.btn_save).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,TestActivity.class);
-                startActivity(intent);
+            public void onClick(View view) {
+                progressDialog.start();//开始加载
+                //     progressDialog.cancel();//结束加载
+
             }
         });
+
+
     }
 
     private void initView() {
