@@ -11,6 +11,7 @@ import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
+import android.os.Handler;
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
@@ -18,6 +19,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.imagebitmaptest.utils.dialog.ThinkDriveProgressDialog;
+import com.example.imagebitmaptest.utils.dialog.base.BaseActivity;
 import com.example.imagebitmaptest.utils.image.BitMapUtils;
 import com.example.imagebitmaptest.utils.Constant;
 import com.example.imagebitmaptest.utils.image.DataUtility;
@@ -26,7 +29,7 @@ import com.example.imagebitmaptest.utils.file.FileUtils;
 
 import static com.example.imagebitmaptest.utils.Constant.XYD_PHOTO_FILE_PATH;
 
-public class MainActivity extends Activity {
+public class MainActivity extends BaseActivity {
     private ImageView imageView1;
     private ImageView imageView2;
     private ImageView imageView3;
@@ -43,6 +46,18 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView();
+//        showProgressDialog(null,null);
+//       new Handler().postDelayed(new Runnable() {
+//           @Override
+//           public void run() {
+//               runOnUiThread(new Runnable() {
+//                   @Override
+//                   public void run() {
+//                       hiddenProgressDialog();
+//                   }
+//               });
+//           }
+//       },5000);
     }
 
     private void initView() {
