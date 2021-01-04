@@ -275,6 +275,21 @@ public class MainActivity extends Activity {
 
 }
 
+# 详细使用说明 
+
+
+图片压缩
+最好以ImageFactory类为主(比较常用)
+
+图片缩放
+MainActivity
+
+Fileutils 工具类3 已经满足需求
+
+如果需要获取文件路径 参考FileUtils
+获取读取文件的一些资料参考FilUtils2
+
+
 
 
 

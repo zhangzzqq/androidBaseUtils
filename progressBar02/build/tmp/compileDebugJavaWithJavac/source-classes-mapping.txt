@@ -1,0 +1,9 @@
+com/kale/progressbar02/MainActivity.java
+ com.kale.progressbar02.MainActivity
+ com.kale.progressbar02.MainActivity$ProgressRunable
+com/kale/progressbar02/TasksCompletedView.java
+ com.kale.progressbar02.TasksCompletedView
+com/kale/progressbar02/RoundProgressBar.java
+ com.kale.progressbar02.RoundProgressBar
+com/kale/progressbar02/BuildConfig.java
+ com.kale.progressbar02.BuildConfig
