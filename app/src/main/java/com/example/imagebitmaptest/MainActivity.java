@@ -65,35 +65,22 @@ public class MainActivity extends BaseActivity {
         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         progressDialog.setMessage("loading...");
         progressDialog.setCancelable(false);
-<<<<<<< HEAD
 
 //        ProgressDialog mProgressDialog=null;
 //        if (mProgressDialog == null) {
 //            mProgressDialog = ProgressDialog.show(this, null, "message");
 //            mProgressDialog.show();
 //                    }
-=======
-
-
->>>>>>> 5549b1572cc40e39b9a7f8fab738b7a5211ea1b2
-
-        
         findViewById(R.id.btn_save).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-<<<<<<< HEAD
                 waitDialog.show();
-=======
->>>>>>> 5549b1572cc40e39b9a7f8fab738b7a5211ea1b2
 //                progressDialog.start();//开始加载
 //                //     progressDialog.cancel();//结束加载
 
 //                waitDialog.show();
-<<<<<<< HEAD
 //                progressDialog.show();
-=======
                 progressDialog.show();
->>>>>>> 5549b1572cc40e39b9a7f8fab738b7a5211ea1b2
 
 
             }

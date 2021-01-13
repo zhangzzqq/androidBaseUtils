@@ -1,6 +1,11 @@
+import java.text.SimpleDateFormat
+import java.util.regex.Matcher
+import java.util.regex.Pattern
+
 plugins {
     id 'com.android.application'
 }
+def projectName
 
 android {
     compileSdkVersion 29
@@ -26,6 +31,63 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    flavorDimensions"version"
+    productFlavors {
+        demo {
+            dimension "version"
+            applicationIdSuffix ".demo"
+            versionNameSuffix "-demo"
+        }
+        full {
+            dimension "version"
+            applicationIdSuffix ".full"
+            versionNameSuffix "-full"
+        }
+    }
+
+    task getCurrentFlavor() {
+        Gradle gradle = getGradle()
+        String tskReqStr = gradle.getStartParameter().getTaskRequests().toString()
+
+        Pattern pattern
+
+        if (tskReqStr.contains("assemble"))
+            pattern = Pattern.compile("assemble(\\\\w+)(release|debug)")
+        else
+            pattern = Pattern.compile("generate(\\\\w+)(release|debug)")
+
+        Matcher matcher = pattern.matcher(tskReqStr)
+
+        if (matcher.find()) {
+            projectName = matcher.group(1).toLowerCase()
+            // Changing to 2 will return build type, 1 provides product flavor
+        } else {
+            println"NO MATCH FOUND"
+        }
+    }
+
+    task myTask(type: Copy) {
+        dependsOn getCurrentFlavor
+        println"flavor name is $projectName"
+    }
+
+    preBuild.dependsOn myTask
+
+
+
+
+}
+
+def getDate() {
+    def date = new Date()
+    def formattedDate = date.format('yyyyMMddHHmmss')
+    return formattedDate
+}
+def buildTime() {
+    def df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm'Z'") // you can change it
+    df.setTimeZone(TimeZone.getTimeZone("UTC"))
+    return df.format(new Date())
 }
 
 dependencies {
