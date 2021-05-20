@@ -8,7 +8,7 @@ public class Constant {
     public static final String ITM_PHOTO_FILE_PATH = Environment.getExternalStorageDirectory().getPath() + "/BOSPad/itmPhotos/";
 
 
-    public static final String base64Url="iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAAAXNSR0IArs4c6QAAAARzQklUCAgI\n" +
+    public static final String base64Url4="iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAAAXNSR0IArs4c6QAAAARzQklUCAgI\n" +
             "CHwIZIgAABHzSURBVHic7Z17sF5VdcB/JDcRAgQIr5AYEtsKgSDEDg8fVMCUqvjAjjBQbW2ddtrR\n" +
             "gq31UZs6OnRqZ3y1isUSkIZqEREflFYB+yAWsRQYAlKEhldijAgSQpLmdXPv3f1jfYd7k3yv/T77\n" +
             "nPWb+eYy4dt7r++cs87ee+31AEVRvJnb+SiK0oXNwKbcQihKXTGdzxG5BVGUOnIZoiC35RZEUerK\n" +
@@ -128,39 +128,6 @@ public class Constant {
             "egNQl+bswZwd2v9Lt4sjT9C+DyKlRfX9WP8DJzX8ySbwq4QAAAAASUVORK5CYII=";
 
 
-    public static final String base64Url3= "iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAAXNSR0IArs4c6QAAAARzQklUCAgI\n" +
-            "CHwIZIgAAAdhSURBVHic7Z17iBVVGMB/tuu2uvSWNOhFhFlkb7KsiBLsRUjgn0UPKQSzzKjohUQR\n" +
-            "hT0IiiiMIBLUWMWkoCAlk4gsRYkeZLQRZT7SHrp63fVOf5y93ml2Zu55fGfO7HV+sOzu3HO+75vz\n" +
-            "zTlzznceFyrailtDG9BuHOGYvwN4QcKQChluD21Au+FaQ2oCMloReZbfVkwAHvOso3KIIV96ll85\n" +
-            "xBCfBbbSs/y2xGeBHfQsv3RIvJB/FJCRhe8OQ1vSCTztUf5hVUOkGPQou3KIBbd4lF05pGSMRIdM\n" +
-            "RUUxlgB/AQNAHzCuVcZOr2YdXowHNgInxa71AStQTfrRwA5gVOGWCTMSasg6lJ39wAM56doiEFt2\n" +
-            "h0SoJukMzfQTPdpSCGV2SB1Yb5hnnQ9DiqSsDlkN/G6Rb5+0IUVTRod0YG/XAUlDQlBGh7jYdDDv\n" +
-            "wypWZMdPDnlL0e0dC0yzzLtf0pAcLgBu1ki31lFPYTV+JmoQtB3V+4hyfr41kPuVrJmHeA/VnqfZ\n" +
-            "l/cQbHPU680hz6C6fHkFfwD4AXgDmAFcb6HnSQljYzxL074FwLXAsYk0K4HPhPU2GJAS1Al8SvrT\n" +
-            "Pwg8B1wGdEkpHOI0QVl3oOy9UiNt8kmOUI5y4REEavwnpD/984AzXYVrcLKgrAj1PtNhSezvWiy/\n" +
-            "C9uAK2wyrqU5fRqvBec7GmSDbgHq8Ldh+hOHfp869NvVIXtMEs9EjSKTTjjPQvFuzIy/zkKHLRsN\n" +
-            "0t6Q+H+5o+66bsJHaTphALd2OwKmAJsM8vQ76DPF5EH5LpTuncBTAgrfAnqG/jYJuhU5GjfR9UfK\n" +
-            "tdUF6RZHu3qSbegECUM0daWRNh75x6dun6ETiRDBbQIyXEi7hzGFWyHAFMw6A1nvEJfmIQuTGlJL\n" +
-            "uebS7ARrskwVb8+4Lv1SBTPbfnPML5nXmjGkP1l5LMi4vtvRljRMCuVqx/xxOtBYv+Zj1Uk/5u+P\n" +
-            "LEN7Mq4Xxb+CsnpRvdBCmYTdjNjUjOs+qriuzIsd8yfpA46xzGuNdAGGdMgKx/xJDgCjLfNa8RHZ\n" +
-            "L+c88prNkA7JmhMxGV/Z6BWhy0Hh3Tmfic0dxNC1Myud7XtFS6/UwLAG3GmZ99Kcz76xlJlH7iID\n" +
-            "DX4VsUKTVShPmvRu5uB2k3k3+JCD3Cx2aKbLeqJte35WLUhEc0KqQyP9KFtFMe7P+Ux6/qUbdX86\n" +
-            "/JJybZGDbqtyumno9+uaAuqoaV1fnCUsb5JB2rT5/6Cj9D7gw5zPZ0koaUHL/RSG/KmZ7mzSW4jg\n" +
-            "YZMsIRJNlQ7Si8p0bV7qmF867yHGZAiqA4slFBSMbqFkhXKCOwRUlzbens7BfnAUGtcxSF7+6cD7\n" +
-            "/H+ZVHzLuGt3O9OQMi5+1kX3QUq7x7uAexPX5gK7aDpgE2qLeHKmcyLwsb6ZrVmIWnFRx8/YoCh0\n" +
-            "w/lpXd54KGUzygE/oxa/taIXuERTtzaNpaEjGd1FajNSrjVqTRfpDstjPXCKYZ6WRKgtvkVxubA8\n" +
-            "3RjU3IzrLk31LoRD7zXUorEIOFJScA5PCMvTLdANjvnTEA2STqbZWxhNcT2st4XlufSw7kE95b51\n" +
-            "WwnbAMyXVJDBB8LyXByyF7fpZDGHbPGtIIc1grLGogZ78XXLW4BzU9KmdVxc71ekvE4Absz4bDZm\n" +
-            "a3dtMFkU3YoI1XO6iOYMZTdq3vzlRNr7MvK76ndmYRFKcpCcnNK1tQv5oKJEft7USDMO9/12efQJ\n" +
-            "ytLtiDyccm0D9rOhDZwcMr4oRS2wOSUhC90BbdoO2wj3qe7Cwk3d+FldCG7dzCTHaaZLGy9IFGah\n" +
-            "8T/RKGYMmyVFrqQVnERhaoecJFadjMZtz0QWIZb9J8c+y4HvBeSKRnp1MF1crYPUqTmrDNImz7yq\n" +
-            "4x4qeokwm2XZKSxP6kiNCx3ypjVXVwHLgK2o92eN4Xv347avAU53sMGazcLyyhDqT9ufn/wZRO1j\n" +
-            "mYaK6M6m6aBOVNglGC8KyvJ5FrAOS3E79QdUqxF0hrVXUFZoh0hNNQSf8r5GSE7oJkuqII3k+NiF\n" +
-            "61rNG4zUlS2lROe0nVb46Errsgy5aHbwJisPk7W1Id8hjR6SlKzSYnKTIZssqUI8gvCdk5a8ht50\n" +
-            "aMgnS0r3IuBxIVleeRC1VilvE2SoGvIK8I6QrL3AOSYZQh5ZOh21UfQL1LmHydhVhJx9R6Em1I5H\n" +
-            "zQjuQx0m1oU6E9KXXklZhbEVZXhy/sOl2dhD9smo/agobndGXsmmstQv9Dyep1lgjV1cLjdTR23O\n" +
-            "6cX8tLrKITH6UTcxQLibeVdQ1oh3CDT3N/rYo96KHmTPf2kLh4RknqCsxeit3qnIQXJHcQ3DLm/F\n" +
-            "cCTjZ1VzJcAsQVmVQ0qGlUOqL3SxY3JoAyqGMz3ns1eBr4sypKLJ5xnX9+O2/KjCAR8bfCocmM/w\n" +
-            "VfOVQwKTdIC1Q6pelgyDNE/Brt4dJaCHZq1YQfZJ3RUFEqHmzyNkv6apwpL4d3ZVlIDGYW+VQ0qE\n" +
-            "s0OqXpYsRX65WYUmTlsY/gNhuvQY1qL55AAAAABJRU5ErkJggg==";
+    public static final String base64Url3="";
+
 }

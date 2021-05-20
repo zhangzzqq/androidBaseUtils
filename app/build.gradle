@@ -101,4 +101,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     //noinspection GradleCompatible,GradleCompatible
     implementation 'com.android.support:design:28.0.0'
+    //获取蓝牙地址
+    implementation 'net.vidageek:mirror:1.6.1'
+
 }

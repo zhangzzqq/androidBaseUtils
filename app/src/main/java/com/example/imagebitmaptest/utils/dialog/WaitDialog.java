@@ -19,7 +19,7 @@ public class WaitDialog extends Dialog {
         setCanceledOnTouchOutside(false);
         getWindow().setGravity(Gravity.CENTER);
         setContentView(R.layout.dialog_wait_layout);
-        waitText = (TextView) findViewById(R.id.tv_wait_dialog_text);
+//        waitText = (TextView) findViewById(R.id.tv_wait_dialog_text);
     }
 
     /**
@@ -28,7 +28,7 @@ public class WaitDialog extends Dialog {
      * @param waitMsg
      */
     public void setText(CharSequence waitMsg) {
-        waitText.setText(waitMsg);
+//        waitText.setText(waitMsg);
     }
 
     /**

@@ -1,3 +1,5 @@
+include ':httpsDemo'
+include ':imageuploadtest'
 include ':app'
-rootProject.name = "ImageBitmapTest"
+rootProject.name = "androidCommonUtils"
 include ':progressBar02'
