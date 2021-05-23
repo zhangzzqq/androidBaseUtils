@@ -1,6 +1,6 @@
 
 
-        package com.example.imagebitmaptest;
+package com.example.imagebitmaptest;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -272,8 +272,6 @@ public class MainActivity extends Activity {
         byte[] bytes = Base64.decode(base64Data, Base64.DEFAULT);
         return BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
     }
-
-
 
 
 }
