@@ -3,6 +3,7 @@
 package com.example.imagebitmaptest;
 
 import android.annotation.SuppressLint;
+import android.app.ActionBar;
 import android.content.Context;
 import android.os.Bundle;
 
@@ -18,10 +19,14 @@ import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.util.Base64;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.PopupWindow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.imagebitmaptest.utils.image.BitMapUtils;
 import com.example.imagebitmaptest.utils.Constant;
@@ -31,7 +36,7 @@ import com.example.imagebitmaptest.utils.file.FileUtils;
 
 import static com.example.imagebitmaptest.utils.Constant.XYD_PHOTO_FILE_PATH;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity  implements View.OnClickListener {
     private ImageView imageView1;
     private ImageView imageView2;
     private ImageView imageView3;
@@ -43,6 +48,8 @@ public class MainActivity extends Activity {
 
     private static final String TAG = "MainActivity";
     private Button btnSave;
+    private PopupWindow mPopWindow;
+    private TextView tvCenter;
 
 
     @Override
@@ -134,6 +141,21 @@ public class MainActivity extends Activity {
 //      Bitmap bitmap =  readBitMap(Constant.base64Url3);
 //        imageView3.setImageBitmap(bitmap);
         imageView4.setImageBitmap(base64ToBitmap(Constant.base64Url3));
+
+
+       Button btn =  findViewById(R.id.btn);
+        tvCenter = findViewById(R.id.tv_center);
+
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showPopupWindow();
+            }
+        });
+
+
+
     }
 
 
@@ -273,6 +295,52 @@ public class MainActivity extends Activity {
         return BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
     }
 
+    private void showPopupWindow() {
+        //设置contentView
+        View contentView = LayoutInflater.from(MainActivity.this).inflate(R.layout.popup, null);
+        mPopWindow = new PopupWindow(contentView,
+                ActionBar.LayoutParams.WRAP_CONTENT, ActionBar.LayoutParams.WRAP_CONTENT, true);
+        mPopWindow.setContentView(contentView);
+        //设置各个控件的点击响应
+        TextView tv1 = (TextView)contentView.findViewById(R.id.pop_computer);
+        TextView tv2 = (TextView)contentView.findViewById(R.id.pop_financial);
+        TextView tv3 = (TextView)contentView.findViewById(R.id.pop_manage);
+        tv1.setOnClickListener(this);
+        tv2.setOnClickListener(this);
+        tv3.setOnClickListener(this);
+        //显示PopupWindow
+//        View rootview = LayoutInflater.from(MainActivity.this).inflate(R.layout.activity_main, null);
+//        mPopWindow.showAtLocation(rootview, Gravity.BOTTOM, 0, 0);
+
+
+
+        mPopWindow.showAsDropDown(tvCenter);
+
+
+    }
+
+
+    @Override
+    public void onClick(View v) {
+        int id = v.getId();
+        switch (id){
+            case R.id.pop_computer:{
+                Toast.makeText(this,"clicked computer",Toast.LENGTH_SHORT).show();
+                mPopWindow.dismiss();
+            }
+            break;
+            case R.id.pop_financial:{
+                Toast.makeText(this,"clicked financial",Toast.LENGTH_SHORT).show();
+                mPopWindow.dismiss();
+            }
+            break;
+            case R.id.pop_manage:{
+                Toast.makeText(this,"clicked manage",Toast.LENGTH_SHORT).show();
+                mPopWindow.dismiss();
+            }
+            break;
+        }
+    }
 
 }
 
